@@ -213,11 +213,19 @@ a:hover {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 900;
     color: var(--dark-yellow);
     text-decoration: none;
+}
+
+.logo img {
+    display: block;
+    width: clamp(140px, 40vw, 220px);
+    height: auto;
 }
 
 .nav-menu {
@@ -316,11 +324,11 @@ a:hover {
 /* Hero Section */
 .hero {
     position: relative;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, rgba(255, 248, 220, 0.9), rgba(255, 193, 7, 0.9)), 
-                url('https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=1920&h=1080&fit=crop&crop=center') center/cover;
+    background: url('../images/banner.svg') no-repeat center center / cover;
     overflow: hidden;
 }
 
@@ -368,6 +376,27 @@ a:hover {
     animation: fadeInUp 1s ease 0.4s both;
 }
 
+@media (max-width: 767px) {
+    .nav {
+        min-height: 92px;
+        padding: var(--spacing-xs) 0;
+    }
+
+    .logo img {
+        width: clamp(130px, 42vw, 170px);
+    }
+
+    .hero {
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+        margin-top: 92px;
+        background-size: contain;
+        background-position: center top;
+        background-color: var(--warm-yellow);
+    }
+
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -408,6 +437,27 @@ a:hover {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media (max-width: 767px) {
+    .section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .section-title {
+        font-size: 1.45rem;
+        line-height: 1.25;
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .section-subtitle {
+        font-size: 0.95rem;
+        max-width: 340px;
+        margin-bottom: var(--spacing-lg);
+    }
 }
 
 /* Stats/Metrics */
@@ -696,7 +746,9 @@ a:hover {
         flex-direction: row;
         justify-content: center;
     }
+}
     
+@media (min-width: 640px) {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
     }
