@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="YK Vadewale Gallery - See our delicious food, happy customers, and vibrant outlets. Authentic Mumbai street food in pictures.">
+    <meta name="keywords" content="YK Vadewale gallery, food photos, vada pav images, restaurant photos, Mumbai street food pictures">
+    <title>Gallery - YK Vadewale | Food Photos & Outlet Images</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        .gallery-carousel {
+            position: relative;
+            margin-bottom: 3rem;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, var(--light-yellow), var(--primary-yellow));
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+        }
+        
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 2rem 1rem 1rem;
+            text-align: center;
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+        
+        .carousel-nav:hover {
+            background: rgba(0,0,0,0.8);
+        }
+        
+        .carousel-prev {
+            left: 1rem;
+        }
+        
+        .carousel-next {
+            right: 1rem;
+        }
+        
+        .carousel-indicators {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid white;
+            background: transparent;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+        
+        .carousel-indicator.active {
+            background: white;
+        }
+        
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-auto-rows: 20px;
+            gap: 1rem;
+        }
+        
+        .masonry-item {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-medium);
+            cursor: pointer;
+        }
+        
+        .masonry-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .masonry-content {
+            background: var(--white);
+        }
+        
+        .masonry-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, var(--light-yellow), var(--primary-yellow));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--charcoal);
+        }
+        
+        .masonry-caption {
+            padding: 1rem;
+        }
+        
+        .masonry-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--charcoal);
+        }
+        
+        .masonry-description {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+        
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-medium);
+        }
+        
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+        
+        .lightbox-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+        
+        .lightbox-close:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+        
+        .lightbox-caption {
+            padding: 1rem;
+            text-align: center;
+            background: white;
+            color: var(--charcoal);
+        }
+        
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 2px solid var(--primary-yellow);
+            color: var(--charcoal);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-yellow);
+            color: var(--charcoal);
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header" role="banner">
+        <nav class="nav container" role="navigation">
+               <a href="/" class="logo" aria-label="YK Vadewale Home">
+                
+                <img src="assets/images/logo.svg" alt="">
+            </a>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                    <li class="nav-item"><a href="franchise.html" class="nav-link">Franchise</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+        <div class="nav-overlay" id="nav-overlay"></div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero" style="min-height: 50vh;">
+            <div class="container">
+                <div class="hero-content">
+                    <nav aria-label="Breadcrumb" class="mb-md">
+                        <ol style="display: flex; list-style: none; gap: 0.5rem; font-size: 0.9rem; color: var(--medium-gray);">
+                            <li><a href="index.html" style="color: var(--medium-gray);">Home</a></li>
+                            <li>/</li>
+                            <li style="color: var(--charcoal); font-weight: 600;">Gallery</li>
+                        </ol>
+                    </nav>
+                    <h1 class="hero-title">Our Gallery</h1>
+                    <p class="hero-subtitle">
+                        Take a visual journey through our delicious food, happy customers, and vibrant outlets
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Carousel -->
+        <section class="section" id="featured">
+            <div class="container">
+                <h2 class="section-title">Featured Highlights</h2>
+                
+                <div class="gallery-carousel carousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=1200&h=600&fit=crop&crop=center');">
+                            <div class="carousel-caption">
+                                <h3>Signature Vada Pav</h3>
+                                <p>Our most popular item - crispy, fresh, and authentic</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&h=600&fit=crop&crop=center');">
+                            <div class="carousel-caption">
+                                <h3>Dadar Flagship Store</h3>
+                                <p>Where it all began - our original outlet</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=600&fit=crop&crop=center');">
+                            <div class="carousel-caption">
+                                <h3>Expert Chefs</h3>
+                                <p>Skilled hands preparing authentic street food</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=1200&h=600&fit=crop&crop=center');">
+                            <div class="carousel-caption">
+                                <h3>Happy Customers</h3>
+                                <p>Smiles that make our day worthwhile</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-nav carousel-prev" aria-label="Previous slide">‹</button>
+                    <button class="carousel-nav carousel-next" aria-label="Next slide">›</button>
+                    
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active" aria-label="Go to slide 1"></button>
+                        <button class="carousel-indicator" aria-label="Go to slide 2"></button>
+                        <button class="carousel-indicator" aria-label="Go to slide 3"></button>
+                        <button class="carousel-indicator" aria-label="Go to slide 4"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Grid -->
+        <section class="section" id="gallery-grid">
+            <div class="container">
+                <h2 class="section-title">Photo Gallery</h2>
+                
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="food">Food</button>
+                    <button class="filter-btn" data-filter="outlets">Outlets</button>
+                    <button class="filter-btn" data-filter="events">Events</button>
+                    <button class="filter-btn" data-filter="customers">Customers</button>
+                </div>
+                
+                <div class="masonry-grid">
+                    <!-- Food Items -->
+                    <div class="masonry-item gallery-image" data-category="food" data-src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&h=400&fit=crop">
+                        <div class="masonry-content">
+                            <div class="masonry-image">
+                                <img src="https://i.pinimg.com/736x/ec/e0/97/ece0971e35d5991a52329afd62fb3ec5.jpg" 
+                                     alt="Classic Vada Pav - our signature dish" 
+                                     loading="lazy"
+                                     onerror="this.style.display='none'; this.parentElement.innerHTML='🥪';">
+                            </div>
+                            <div class="masonry-caption">
+                                <h3 class="masonry-title">Classic Vada Pav</h3>
+                                <p class="masonry-description">Our signature dish that started it all</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="masonry-item gallery-image" data-category="food" data-src="https://images.unsplash.com/photo-1630383249896-424e482df921?w=600&h=400&fit=crop">
+                        <div class="masonry-content">
+                            <div class="masonry-image">
+                                <img src="https://i.pinimg.com/736x/1b/8d/6f/1b8d6f6c2fcedf7cba9f267801c33ad7.jpg" 
+                                     alt="Spicy Misal Pav - authentic Maharashtrian curry" 
+                                     loading="lazy"
+                                     onerror="this.style.display='none'; this.parentElement.innerHTML='🌶️';">
+                            </div>
+                            <div class="masonry-caption">
+                                <h3 class="masonry-title">Spicy Misal Pav</h3>
+                                <p class="masonry-description">Authentic Maharashtrian flavors</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="masonry-item gallery-image" data-category="food" data-src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&h=400&fit=crop">
+                        <div class="masonry-content">
+                            <div class="masonry-image">
+                                <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&h=300&fit=crop&crop=center" 
+                                     alt="Cheese Burst Vada Pav with melted cheese" 
+                                     loading="lazy"
+                                     onerror="this.style.display='none'; this.parentElement.innerHTML='🧀';">
+                            </div>
+                            <div class="masonry-caption">
+                                <h3 class="masonry-title">Cheese Burst Vada Pav</h3>
+                                <p class="masonry-description">Indulgent twist on the classic</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="masonry-item gallery-image" data-category="food" data-src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&h=400&fit=crop">
+                        <div class="masonry-content">
+                            <div class="masonry-image">
+                                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop&crop=center" 
+                                     alt="Fresh Bhajiya - crispy onion fritters" 
+                                     loading="lazy"
+                                     onerror="this.style.display='none'; this.parentElement.innerHTML='🧅';">
+                            </div>
+                            <div class="masonry-caption">
+                                <h3 class="masonry-title">Fresh Bhajiya</h3>
+                                <p class="masonry-description">Crispy onion fritters</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Outlets -->
+                    <div class="masonry-item gallery-image" data-category="outlets" data-src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=400&fit=crop">
+                        <div class="masonry-content">
+                            <div class="masonry-image">
+                                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=300&fit=crop&crop=center" 
+                                     alt="Dadar Main Outlet - our flagship restaurant" 
+                                     loading="lazy"
+                                     onerror="this.style.display='none'; this.parentElement.innerHTML='🏪';">
+                            </div>
+                            <div class="masonry-caption">
+                                <h3 class="masonry-title">Dadar Main Outlet</h3>
+                                <p class="masonry-description">Our flagship store where it all began</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="masonry-item gallery-image" data-category="outlets" data-src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop">
+                        <div class="masonry-content">
+                            <div class="masonry-image">
+                                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop&crop=center" 
+                                     alt="Andheri Branch - modern restaurant interior" 
+                                     loading="lazy"
+                                     onerror="this.style.display='none'; this.parentElement.innerHTML='🏢';">
+                            </div>
+                            <div class="masonry-caption">
+                                <h3 class="masonry-title">Andheri Branch</h3>
+                                <p class="masonry-description">Modern outlet with traditional taste</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="masonry-item gallery-image" data-category="outlets" data-src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop">
+                        <div class="masonry-content">
+                            <div class="masonry-image">
+                                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop&crop=center" 
+                                     alt="Kitchen View - clean and hygienic food preparation" 
+                                     loading="lazy"
+                                     onerror="this.style.display='none'; this.parentElement.innerHTML='🍽️';">
+                            </div>
+                            <div class="masonry-caption">
+                                <h3 class="masonry-title">Kitchen View</h3>
+                                <p class="masonry-description">Clean, hygienic food preparation</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Events -->
+                    <div class="masonry-item gallery-image" data-category="events" data-src="event1.jpg">
+                        <div class="masonry-content">
+                            <div class="masonry-image">🎉</div>
+                            <div class="masonry-caption">
+                                <h3 class="masonry-title">Grand Opening</h3>
+                                <p class="masonry-description">Celebrating new outlet launch</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="masonry-item gallery-image" data-category="events" data-src="event2.jpg">
+                        <div class="masonry-content">
+                            <div class="masonry-image">🏆</div>
+                            <div class="masonry-caption">
+                                <h3 class="masonry-title">Award Ceremony</h3>
+                                <p class="masonry-description">Best Street Food Award 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="masonry-item gallery-image" data-category="events" data-src="event3.jpg">
+                        <div class="masonry-content">
+                            <div class="masonry-image">🎊</div>
+                            <div class="masonry-caption">
+                                <h3 class="masonry-title">Festival Celebration</h3>
+                                <p class="masonry-description">Ganesh Chaturthi special menu</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Customers -->
+                    <div class="masonry-item gallery-image" data-category="customers" data-src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=600&h=400&fit=crop">
+                        <div class="masonry-content">
+                            <div class="masonry-image">
+                                <img src="https://tse2.mm.bing.net/th/id/OIP.3npboJPT1MttKEG1X4xVlwHaJQ?pid=Api&P=0&h=180" 
+                                     alt="Happy Family enjoying meal together" 
+                                     loading="lazy"
+                                     onerror="this.style.display='none'; this.parentElement.innerHTML='😊';">
+                            </div>
+                            <div class="masonry-caption">
+                                <h3 class="masonry-title">Happy Family</h3>
+                                <p class="masonry-description">Enjoying our family combo</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="masonry-item gallery-image" data-category="customers" data-src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=600&h=400&fit=crop">
+                        <div class="masonry-content">
+                            <div class="masonry-image">
+                                <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=400&h=300&fit=crop&crop=center" 
+                                     alt="College Friends enjoying budget-friendly meals" 
+                                     loading="lazy"
+                                     onerror="this.style.display='none'; this.parentElement.innerHTML='👥';">
+                            </div>
+                            <div class="masonry-caption">
+                                <h3 class="masonry-title">College Friends</h3>
+                                <p class="masonry-description">Budget-friendly meals for students</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="masonry-item gallery-image" data-category="customers" data-src="customer3.jpg">
+                        <div class="masonry-content">
+                            <div class="masonry-image">👴</div>
+                            <div class="masonry-caption">
+                                <h3 class="masonry-title">Regular Customer</h3>
+                                <p class="masonry-description">Mr. Sharma, our daily visitor since 2017</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="masonry-item gallery-image" data-category="food" data-src="combo1.jpg">
+                        <div class="masonry-content">
+                            <div class="masonry-image">🍽️</div>
+                            <div class="masonry-caption">
+                                <h3 class="masonry-title">YK Special Combo</h3>
+                                <p class="masonry-description">Complete meal with great savings</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="masonry-item gallery-image" data-category="food" data-src="drinks1.jpg">
+                        <div class="masonry-content">
+                            <div class="masonry-image">🥤</div>
+                            <div class="masonry-caption">
+                                <h3 class="masonry-title">Fresh Lassi</h3>
+                                <p class="masonry-description">Cool and refreshing traditional drink</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section" id="cta" style="background: var(--light-gray);">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">Visit Us Today!</h2>
+                    <p class="section-subtitle">
+                        Experience the authentic taste and vibrant atmosphere of YK Vadewale
+                    </p>
+                    
+                    <div class="hero-cta">
+                        <a href="contact.html" class="btn btn-primary btn-lg">Find Locations</a>
+                        <a href="menu.html" class="btn btn-secondary btn-lg">View Menu</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                      <a href="/" class="logo" aria-label="YK Vadewale Home">
+                
+                <img src="assets/images/logo.svg" alt="">
+            </a>
+                    <p>Bringing authentic Mumbai street food to your neighborhood with love, tradition, and quality.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-link" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Business</h3>
+                    <ul>
+                        <li><a href="franchise.html">Franchise</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>📍 123 Food Street, Mumbai</li>
+                        <li>📞 +91-98765-43210</li>
+                        <li>✉️ info@ykvadewale.com</li>
+                        <li>🕒 Daily: 8 AM - 10 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+         <div class="footer-bottom">
+                <p>&copy; 2025 YK Vadewale. All rights reserved by <a href="https://webakoof.com/">WEBAKOOF </a>  |
+                   <a href="#privacy">Privacy Policy</a> | 
+                   <a href="#terms">Terms & Conditions</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Gallery filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.masonry-item');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const filter = btn.dataset.filter;
+                    
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // Filter items
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.dataset.category === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="YK Vadewale Franchise Opportunities - Join India's fastest growing street food chain. Low investment, high returns, complete support.">
+    <meta name="keywords" content="YK Vadewale franchise, food franchise India, vada pav franchise, street food business opportunity, Mumbai food franchise">
+    <title>Franchise Opportunities - YK Vadewale | Join Our Success Story</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        .franchise-hero {
+            background: linear-gradient(135deg, var(--charcoal), var(--black));
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .franchise-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23FFD700" opacity="0.1"/><circle cx="80" cy="30" r="1.5" fill="%23FFC107" opacity="0.15"/></svg>');
+            animation: float 15s ease-in-out infinite;
+        }
+        
+        .investment-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-medium);
+            border-left: 4px solid var(--primary-yellow);
+            margin-bottom: 1.5rem;
+        }
+        
+        .investment-amount {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--dark-yellow);
+            margin-bottom: 0.5rem;
+        }
+        
+        .investment-type {
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+        
+        .investment-details {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-medium);
+        }
+        
+        .process-step:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .step-number {
+            flex: 0 0 60px;
+            width: 60px;
+            height: 60px;
+            background: var(--primary-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            margin-right: 1.5rem;
+        }
+        
+        .step-content h3 {
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+        
+        .step-content p {
+            color: var(--medium-gray);
+            margin: 0;
+        }
+        
+        .support-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-medium);
+        }
+        
+        .support-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .support-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .support-title {
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+        
+        .support-description {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-light);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            font-weight: 600;
+            color: var(--charcoal);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition-fast);
+        }
+        
+        .faq-question:hover {
+            background: var(--light-gray);
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--medium-gray);
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        .faq-icon {
+            font-size: 1.2rem;
+            transition: var(--transition-fast);
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header" role="banner">
+        <nav class="nav container" role="navigation">
+             <a href="/" class="logo" aria-label="YK Vadewale Home">
+                
+                <img src="assets/images/logo.svg" alt="">
+            </a>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="franchise.html" class="nav-link active">Franchise</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+        <div class="nav-overlay" id="nav-overlay"></div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="home" role="banner" 
+         style="background: url('assets/images/banner-2.svg') no-repeat center center/cover; 
+                position: relative; 
+                width: 100%; 
+                min-height: 100vh; 
+                display: flex; 
+                align-items: center;">
+
+    <!-- <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Taste the <span style="color: var(--dark-yellow);">Real Mumbai</span>
+            </h1>
+            <p class="hero-subtitle">
+                Authentic street food made fresh daily with love, tradition, and the finest ingredients. 
+                Experience the true flavors of Mumbai's iconic Vada Pav and more!
+            </p>
+            <div class="hero-cta">
+                <a href="menu.html" class="btn btn-primary btn-lg">Order Now</a>
+                <a href="franchise.html" class="btn btn-outline btn-lg">Join Franchise</a>
+            </div>
+        </div>
+    </div> -->
+</section>
+
+
+        <!-- Why Choose YK Vadewale Franchise -->
+        <section class="section" id="why-franchise">
+            <div class="container">
+                <h2 class="section-title">Why Choose YK Vadewale Franchise?</h2>
+                <p class="section-subtitle">
+                    Join a proven business model with strong brand recognition and growing market demand
+                </p>
+                
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">📈</div>
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-title">Proven Business Model</h3>
+                            <p class="menu-item-description">
+                                8+ years of successful operations with consistent growth and profitability across all outlets.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">🏆</div>
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-title">Strong Brand Recognition</h3>
+                            <p class="menu-item-description">
+                                Established brand with loyal customer base and positive reputation in the market.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">💰</div>
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-title">Low Investment, High Returns</h3>
+                            <p class="menu-item-description">
+                                Affordable franchise fee with quick ROI and multiple revenue streams.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">🤝</div>
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-title">Complete Support</h3>
+                            <p class="menu-item-description">
+                                End-to-end support from setup to operations, marketing, and ongoing training.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investment Details -->
+        <section class="section" id="investment" style="background: var(--light-gray);">
+            <div class="container">
+                <h2 class="section-title">Investment Options</h2>
+                <p class="section-subtitle">
+                    Choose the franchise model that best fits your budget and business goals
+                </p>
+                
+                <div class="stats-grid">
+                    <div class="investment-card">
+                        <div class="investment-amount">₹8-12 Lakhs</div>
+                        <div class="investment-type">Standard Outlet</div>
+                        <div class="investment-details">
+                            • 300-500 sq ft space<br>
+                            • Full kitchen setup<br>
+                            • Seating for 15-20 people<br>
+                            • Prime location support
+                        </div>
+                    </div>
+                    
+                    <div class="investment-card">
+                        <div class="investment-amount">₹5-8 Lakhs</div>
+                        <div class="investment-type">Express Counter</div>
+                        <div class="investment-details">
+                            • 150-300 sq ft space<br>
+                            • Compact kitchen setup<br>
+                            • Takeaway focused<br>
+                            • Food court locations
+                        </div>
+                    </div>
+                    
+                    <div class="investment-card">
+                        <div class="investment-amount">₹3-5 Lakhs</div>
+                        <div class="investment-type">Kiosk Model</div>
+                        <div class="investment-details">
+                            • 100-200 sq ft space<br>
+                            • Basic setup<br>
+                            • High footfall areas<br>
+                            • Quick service model
+                        </div>
+                    </div>
+                    
+                    <div class="investment-card">
+                        <div class="investment-amount">₹15-25 Lakhs</div>
+                        <div class="investment-type">Master Franchise</div>
+                        <div class="investment-details">
+                            • City/region rights<br>
+                            • Multiple outlet development<br>
+                            • Sub-franchise opportunities<br>
+                            • Exclusive territory
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Franchise Process -->
+        <section class="section" id="process">
+            <div class="container">
+                <h2 class="section-title">Simple Franchise Process</h2>
+                <p class="section-subtitle">
+                    Get started with YK Vadewale franchise in just 6 easy steps
+                </p>
+                
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Initial Enquiry</h3>
+                            <p>Submit your franchise application with basic details and investment capacity.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Profile Evaluation</h3>
+                            <p>Our team reviews your application and conducts initial screening and discussion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Location Analysis</h3>
+                            <p>Site visit and location feasibility study by our experts to ensure success.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Agreement Signing</h3>
+                            <p>Finalize franchise terms and sign the agreement with initial payment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Setup & Training</h3>
+                            <p>Complete outlet setup with equipment installation and comprehensive staff training.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h3>Grand Opening</h3>
+                            <p>Launch your outlet with marketing support and ongoing operational assistance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Provided -->
+        <section class="section" id="support" style="background: var(--light-gray);">
+    <div class="container">
+        <h2 class="section-title">Complete Support System</h2>
+        <p class="section-subtitle">
+            We provide end-to-end support to ensure your franchise success
+        </p>
+        
+        <div class="menu-grid" 
+             style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; text-align: center;">
+            
+            <div class="support-item" style="background: #fff; padding: 1.5rem; border-radius: 8px;">
+                <div class="support-icon" style="font-size: 2rem; margin-bottom: 0.5rem;">🏗️</div>
+                <h3 class="support-title">Setup Support</h3>
+                <p class="support-description">Complete assistance in outlet design, equipment procurement, and installation.</p>
+            </div>
+            
+            <div class="support-item" style="background: #fff; padding: 1.5rem; border-radius: 8px;">
+                <div class="support-icon" style="font-size: 2rem; margin-bottom: 0.5rem;">👨‍🏫</div>
+                <h3 class="support-title">Training Program</h3>
+                <p class="support-description">Comprehensive training for you and your staff on operations, recipes, and service.</p>
+            </div>
+            
+            <div class="support-item" style="background: #fff; padding: 1.5rem; border-radius: 8px;">
+                <div class="support-icon" style="font-size: 2rem; margin-bottom: 0.5rem;">📢</div>
+                <h3 class="support-title">Marketing Support</h3>
+                <p class="support-description">Brand marketing materials, local advertising support, and promotional campaigns.</p>
+            </div>
+            
+            <div class="support-item" style="background: #fff; padding: 1.5rem; border-radius: 8px;">
+                <div class="support-icon" style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
+                <h3 class="support-title">Operations Guidance</h3>
+                <p class="support-description">Ongoing operational support, quality control, and business development assistance.</p>
+            </div>
+            
+            <div class="support-item" style="background: #fff; padding: 1.5rem; border-radius: 8px;">
+                <div class="support-icon" style="font-size: 2rem; margin-bottom: 0.5rem;">🚚</div>
+                <h3 class="support-title">Supply Chain</h3>
+                <p class="support-description">Reliable supply of ingredients, packaging materials, and equipment maintenance.</p>
+            </div>
+            
+        
+        </div>
+    </div>
+</section>
+
+
+        <!-- Success Stories -->
+       <section class="section" id="success-stories">
+    <div class="container" style="text-align: center;">
+        <h2 class="section-title">Franchise Success Stories</h2>
+        <p class="section-subtitle">
+            Hear from our successful franchise partners across India
+        </p>
+        
+        <div class="menu-grid" 
+             style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
+            
+            <!-- Card 1 -->
+            <div class="menu-item" style="max-width: 300px; background: #fff; padding: 1.5rem; border-radius: 10px; text-align: center;">
+                <div class="menu-item-image" style="font-size: 3rem; margin-bottom: 0.5rem;">👨‍💼</div>
+                <div class="menu-item-content">
+                    <h3 class="menu-item-title">Rajesh Patel - Andheri</h3>
+                    <p class="menu-item-description">
+                        "Invested ₹10 lakhs in 2021, recovered investment in 14 months. Now planning second outlet!"
+                    </p>
+                    <div class="menu-item-price" style="color: var(--dark-yellow); font-weight: 600;">ROI: 18 months</div>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="menu-item" style="max-width: 300px; background: #fff; padding: 1.5rem; border-radius: 10px; text-align: center;">
+                <div class="menu-item-image" style="font-size: 3rem; margin-bottom: 0.5rem;">👩‍💼</div>
+                <div class="menu-item-content">
+                    <h3 class="menu-item-title">Priya Sharma - Pune</h3>
+                    <p class="menu-item-description">
+                        "Excellent support from YK team. Monthly revenue of ₹3+ lakhs with consistent growth."
+                    </p>
+                    <div class="menu-item-price" style="color: var(--dark-yellow); font-weight: 600;">Monthly Revenue: ₹3L+</div>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="menu-item" style="max-width: 300px; background: #fff; padding: 1.5rem; border-radius: 10px; text-align: center;">
+                <div class="menu-item-image" style="font-size: 3rem; margin-bottom: 0.5rem;">👨‍👩‍👧‍👦</div>
+                <div class="menu-item-content">
+                    <h3 class="menu-item-title">Kumar Family - Nashik</h3>
+                    <p class="menu-item-description">
+                        "Family business that provides stable income. Great brand support and customer loyalty."
+                    </p>
+                    <div class="menu-item-price" style="color: var(--dark-yellow); font-weight: 600;">Outlets: 2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- FAQ Section -->
+        <section class="section" id="faq" style="background: var(--light-gray);">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What is the minimum investment required?
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            The minimum investment starts from ₹3 lakhs for a kiosk model. Standard outlets require ₹8-12 lakhs depending on location and size.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What is the franchise fee and royalty?
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            Franchise fee ranges from ₹2-5 lakhs based on outlet type. Monthly royalty is 5% of gross revenue with 2% marketing fee.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How long does it take to break even?
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            Most franchisees break even within 12-18 months depending on location, operations, and local market conditions.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Do you provide training and support?
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            Yes, we provide comprehensive 15-day training program covering operations, recipes, customer service, and business management.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What are the space requirements?
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            Space requirements vary: Kiosk (100-200 sq ft), Express Counter (150-300 sq ft), Standard Outlet (300-500 sq ft).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Franchise Application Form -->
+    <section class="section" id="franchise-form" style="background: #f5fdf7; padding: 4rem 1rem;">
+  <div class="container" style="max-width: 900px; margin: 0 auto;">
+
+    <!-- Gradient Header Bar -->
+    <div style="background: linear-gradient(90deg, #FFD700, #69B84E); 
+                padding: 1rem 1.5rem; 
+                border-radius: 12px 12px 0 0; 
+                text-align: center; 
+                color: #000; 
+                font-weight: 700; 
+                font-size: 1.8rem; 
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+      🚀 Apply for YK Vadewale Franchise
+    </div>
+
+    <!-- Cute Form Card -->
+    <div style="background: #fff; 
+                padding: 2rem; 
+                border-radius: 0 0 12px 12px; 
+                box-shadow: 0 10px 25px rgba(0,0,0,0.08);">
+      
+      <p style="text-align:center; margin-bottom: 2rem; font-size: 1rem; color: #444;">
+        Fill in your details below & we’ll reach out within <strong>24 hours</strong> 🍔✨
+      </p>
+
+      <form class="franchise-application-form" style="display: flex; flex-direction: column; gap: 1.2rem;">
+        
+        <!-- Name -->
+        <div class="form-row" style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <div class="form-group" style="flex: 1; min-width: 240px;">
+            <label for="firstName" class="form-label" style="font-weight: 600;">First Name *</label>
+            <input type="text" id="firstName" name="firstName" required
+                   style="width: 100%; padding: 0.9rem; border: 1px solid #ddd; border-radius: 10px; background: #fafafa;">
+          </div>
+          <div class="form-group" style="flex: 1; min-width: 240px;">
+            <label for="lastName" class="form-label" style="font-weight: 600;">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" required
+                   style="width: 100%; padding: 0.9rem; border: 1px solid #ddd; border-radius: 10px; background: #fafafa;">
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="form-row" style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <div class="form-group" style="flex: 1; min-width: 240px;">
+            <label for="email" class="form-label" style="font-weight: 600;">Email Address *</label>
+            <input type="email" id="email" name="email" required
+                   style="width: 100%; padding: 0.9rem; border: 1px solid #ddd; border-radius: 10px; background: #fafafa;">
+          </div>
+          <div class="form-group" style="flex: 1; min-width: 240px;">
+            <label for="phone" class="form-label" style="font-weight: 600;">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required
+                   style="width: 100%; padding: 0.9rem; border: 1px solid #ddd; border-radius: 10px; background: #fafafa;">
+          </div>
+        </div>
+
+        <!-- City + Investment -->
+        <div class="form-row" style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <div class="form-group" style="flex: 1; min-width: 240px;">
+            <label for="city" class="form-label" style="font-weight: 600;">Preferred City *</label>
+            <input type="text" id="city" name="city" required
+                   style="width: 100%; padding: 0.9rem; border: 1px solid #ddd; border-radius: 10px; background: #fafafa;">
+          </div>
+          <div class="form-group" style="flex: 1; min-width: 240px;">
+            <label for="investment" class="form-label" style="font-weight: 600;">Investment Capacity *</label>
+            <select id="investment" name="investment" required
+                    style="width: 100%; padding: 0.9rem; border: 1px solid #ddd; border-radius: 10px; background: #fafafa;">
+              <option value="">Select Range</option>
+              <option value="3-5">₹3-5 Lakhs</option>
+              <option value="5-8">₹5-8 Lakhs</option>
+              <option value="8-12">₹8-12 Lakhs</option>
+              <option value="15-25">₹15-25 Lakhs</option>
+              <option value="25+">₹25+ Lakhs</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="form-group">
+          <label for="experience" class="form-label" style="font-weight: 600;">Business Experience</label>
+          <textarea id="experience" name="experience" rows="3" placeholder="Tell us about your business background"
+                    style="width: 100%; padding: 0.9rem; border: 1px solid #ddd; border-radius: 10px; background: #fafafa;"></textarea>
+        </div>
+
+        <!-- Message -->
+        <div class="form-group">
+          <label for="message" class="form-label" style="font-weight: 600;">Additional Information</label>
+          <textarea id="message" name="message" rows="3" placeholder="Any specific questions or requirements?"
+                    style="width: 100%; padding: 0.9rem; border: 1px solid #ddd; border-radius: 10px; background: #fafafa;"></textarea>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" 
+                style="width: 100%; padding: 1rem; font-size: 1rem; border-radius: 10px; 
+                       background: linear-gradient(90deg, #FFD700, #69B84E); 
+                       border: none; font-weight: 700; color: #000; 
+                       cursor: pointer; transition: transform 0.2s ease;">
+          Submit Application ✨
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="/" class="logo" aria-label="YK Vadewale Home">
+                
+                <img src="assets/images/logo.svg" alt="">
+            </a>
+                    <p>Bringing authentic Mumbai street food to your neighborhood with love, tradition, and quality.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-link" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Business</h3>
+                    <ul>
+                        <li><a href="franchise.html">Franchise</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>📍 123 Food Street, Mumbai</li>
+                        <li>📞 +91-98765-43210</li>
+                        <li>✉️ franchise@ykvadewale.com</li>
+                        <li>🕒 Daily: 8 AM - 10 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+           <div class="footer-bottom">
+                <p>&copy; 2025 YK Vadewale. All rights reserved by <a href="https://webakoof.com/">WEBAKOOF </a>  |
+                   <a href="#privacy">Privacy Policy</a> | 
+                   <a href="#terms">Terms & Conditions</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // FAQ functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all FAQ items
+                    faqItems.forEach(faq => {
+                        faq.classList.remove('active');
+                        faq.querySelector('.faq-answer').classList.remove('active');
+                    });
+                    
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        item.classList.add('active');
+                        answer.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

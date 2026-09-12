@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="YK Vadewale Menu - Authentic Mumbai Street Food | Vada Pav, Misal Pav, Bhajiya, Drinks & Combos. Fresh, Vegetarian, Affordable.">
+    <meta name="keywords" content="YK Vadewale menu, vada pav price, misal pav, bhajiya, mumbai street food menu, vegetarian food">
+    <title>Menu - YK Vadewale | Authentic Mumbai Street Food</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 1rem;
+        }
+        
+        .menu-tab {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 2px solid transparent;
+            color: var(--medium-gray);
+            font-weight: 600;
+            transition: var(--transition-fast);
+        }
+        
+        .menu-tab.active {
+            background: var(--primary-yellow);
+            color: var(--charcoal);
+            border-color: var(--dark-yellow);
+        }
+        
+        .menu-tab-content {
+            display: none;
+        }
+        
+        .menu-tab-content.active {
+            display: block;
+        }
+        
+        .price-badge {
+            background: var(--primary-yellow);
+            color: var(--charcoal);
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: var(--medium-gray);
+            font-size: 0.875rem;
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header" role="banner">
+        <nav class="nav container" role="navigation">
+            <a href="/" class="logo" aria-label="YK Vadewale Home">
+                
+                <img src="assets/images/logo.svg" alt="">
+            </a>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="menu.html" class="nav-link active">Menu</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="franchise.html" class="nav-link">Franchise</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+        <div class="nav-overlay" id="nav-overlay"></div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero" style="min-height: 50vh;">
+            <div class="container">
+                <div class="hero-content">
+                    <nav aria-label="Breadcrumb" class="mb-md">
+                        <ol style="display: flex; list-style: none; gap: 0.5rem; font-size: 0.9rem; color: var(--medium-gray);">
+                            <li><a href="index.html" style="color: var(--medium-gray);">Home</a></li>
+                            <li>/</li>
+                            <li style="color: var(--charcoal); font-weight: 600;">Menu</li>
+                        </ol>
+                    </nav>
+                    <h1 class="hero-title">Our Menu</h1>
+                    <p class="hero-subtitle">Authentic Mumbai street food made fresh daily with love and tradition</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="menu">
+            <div class="container">
+                <div class="menu-tabs">
+                    <button class="menu-tab active" data-tab="vada-pav">🥪 Vada Pav</button>
+                    <button class="menu-tab" data-tab="misal">🌶️ Misal Pav</button>
+                    <button class="menu-tab" data-tab="bhajiya">🧅 Bhajiya</button>
+                    <button class="menu-tab" data-tab="drinks">🥤 Drinks</button>
+                    <button class="menu-tab" data-tab="combos">🍽️ Combos</button>
+                </div>
+
+                <!-- Vada Pav Tab -->
+                <div class="menu-tab-content active" id="vada-pav">
+                    <h2 class="section-title">Vada Pav Varieties</h2>
+                    <p class="section-subtitle">The heart and soul of Mumbai street food</p>
+                    
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=300&fit=crop&crop=center" 
+                                     alt="Classic Vada Pav - crispy potato fritter in fresh bun" 
+                                     loading="lazy"
+                                     onerror="this.style.display='none'; this.parentElement.classList.add('emoji-fallback'); this.parentElement.innerHTML='🥪';">
+                            </div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Classic Vada Pav
+                                </h3>
+                                <p class="menu-item-description">
+                                    The original Mumbai street food - crispy potato vada with fresh pav and signature chutneys
+                                </p>
+                                <div class="menu-item-price">₹25</div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&h=300&fit=crop&crop=center" 
+                                     alt="Cheese Burst Vada Pav with melted cheese" 
+                                     loading="lazy"
+                                     onerror="this.style.display='none'; this.parentElement.classList.add('emoji-fallback'); this.parentElement.innerHTML='🧀';">
+                            </div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Cheese Burst Vada Pav
+                                </h3>
+                                <p class="menu-item-description">
+                                    Classic vada pav loaded with melted cheese for the ultimate indulgence
+                                </p>
+                                <div class="menu-item-price">₹35</div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">🌶️</div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Schezwan Vada Pav
+                                </h3>
+                                <p class="menu-item-description">
+                                    Spicy schezwan sauce adds a fiery kick to the classic vada pav
+                                </p>
+                                <div class="menu-item-price">₹30</div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">🥬</div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Green Chutney Vada Pav
+                                </h3>
+                                <p class="menu-item-description">
+                                    Fresh mint and coriander chutney gives this vada pav a refreshing twist
+                                </p>
+                                <div class="menu-item-price">₹28</div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Misal Pav Tab -->
+                <div class="menu-tab-content" id="misal">
+                    <h2 class="section-title">Misal Pav</h2>
+                    <p class="section-subtitle">Authentic Maharashtrian spicy curry with pav</p>
+                    
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.unsplash.com/photo-1630383249896-424e482df921?w=400&h=300&fit=crop&crop=center" 
+                                     alt="Mumbai Misal Pav - spicy curry with bread" 
+                                     loading="lazy"
+                                     onerror="this.style.display='none'; this.parentElement.classList.add('emoji-fallback'); this.parentElement.innerHTML='🌶️';">
+                            </div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Mumbai Misal Pav
+                                </h3>
+                                <p class="menu-item-description">
+                                    Spicy misal with traditional toppings, onions, and fresh pav
+                                </p>
+                                <div class="menu-item-price">₹45</div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">🔥</div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>YK Special Misal
+                                </h3>
+                                <p class="menu-item-description">
+                                    Extra spicy misal with additional toppings and butter pav
+                                </p>
+                                <div class="menu-item-price">₹55</div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">🥛</div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Jain Misal Pav
+                                </h3>
+                                <p class="menu-item-description">
+                                    Specially prepared without onion and garlic for Jain community
+                                </p>
+                                <div class="menu-item-price">₹45</div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">🍽️</div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Misal Thali
+                                </h3>
+                                <p class="menu-item-description">
+                                    Complete meal with misal, pav, pickle, onions, and buttermilk
+                                </p>
+                                <div class="menu-item-price">₹75</div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bhajiya Tab -->
+                <div class="menu-tab-content" id="bhajiya">
+                    <h2 class="section-title">Bhajiya & Snacks</h2>
+                    <p class="section-subtitle">Crispy fritters and traditional snacks</p>
+                    
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop&crop=center" 
+                                     alt="Onion Bhajiya - crispy onion fritters" 
+                                     loading="lazy"
+                                     onerror="this.style.display='none'; this.parentElement.classList.add('emoji-fallback'); this.parentElement.innerHTML='🧅';">
+                            </div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Onion Bhajiya
+                                </h3>
+                                <p class="menu-item-description">
+                                    Crispy onion fritters served with mint and tamarind chutney
+                                </p>
+                                <div class="menu-item-price">₹30</div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">🥔</div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Aloo Bhajiya
+                                </h3>
+                                <p class="menu-item-description">
+                                    Potato fritters with perfect blend of spices and herbs
+                                </p>
+                                <div class="menu-item-price">₹25</div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">🌿</div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Mixed Bhajiya
+                                </h3>
+                                <p class="menu-item-description">
+                                    Assorted vegetable fritters - onion, potato, and green chilies
+                                </p>
+                                <div class="menu-item-price">₹35</div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">🍞</div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Bread Bhajiya
+                                </h3>
+                                <p class="menu-item-description">
+                                    Bread slices dipped in spiced gram flour batter and deep fried
+                                </p>
+                                <div class="menu-item-price">₹20</div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drinks Tab -->
+                <div class="menu-tab-content" id="drinks">
+                    <h2 class="section-title">Refreshing Drinks</h2>
+                    <p class="section-subtitle">Cool beverages to complement your spicy meal</p>
+                    
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=400&h=300&fit=crop&crop=center" 
+                                     alt="Fresh Lassi - traditional yogurt drink" 
+                                     loading="lazy"
+                                     onerror="this.style.display='none'; this.parentElement.classList.add('emoji-fallback'); this.parentElement.innerHTML='🥤';">
+                            </div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Fresh Lassi
+                                </h3>
+                                <p class="menu-item-description">
+                                    Cool and creamy traditional lassi made with fresh yogurt
+                                </p>
+                                <div class="menu-item-price">₹30</div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">🥭</div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Mango Lassi
+                                </h3>
+                                <p class="menu-item-description">
+                                    Seasonal mango lassi with real mango pulp and yogurt
+                                </p>
+                                <div class="menu-item-price">₹40</div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">🧊</div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Buttermilk
+                                </h3>
+                                <p class="menu-item-description">
+                                    Spiced buttermilk with mint, ginger, and black salt
+                                </p>
+                                <div class="menu-item-price">₹25</div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">🍋</div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Fresh Lime Water
+                                </h3>
+                                <p class="menu-item-description">
+                                    Refreshing lime water with mint and black salt
+                                </p>
+                                <div class="menu-item-price">₹20</div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Combos Tab -->
+                <div class="menu-tab-content" id="combos">
+                    <h2 class="section-title">Value Combos</h2>
+                    <p class="section-subtitle">Great value meal combinations for the perfect experience</p>
+                    
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item-image">🍽️</div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>YK Special Combo
+                                </h3>
+                                <p class="menu-item-description">
+                                    Classic Vada Pav + Mumbai Misal + Fresh Lassi
+                                </p>
+                                <div class="menu-item-price">
+                                    ₹85 <span class="old-price">₹100</span>
+                                    <span class="price-badge">Save ₹15</span>
+                                </div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">🌶️</div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Spicy Lover Combo
+                                </h3>
+                                <p class="menu-item-description">
+                                    Schezwan Vada Pav + YK Special Misal + Buttermilk
+                                </p>
+                                <div class="menu-item-price">
+                                    ₹95 <span class="old-price">₹110</span>
+                                    <span class="price-badge">Save ₹15</span>
+                                </div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">🧅</div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Snack Attack Combo
+                                </h3>
+                                <p class="menu-item-description">
+                                    2 Vada Pav + Mixed Bhajiya + Lime Water
+                                </p>
+                                <div class="menu-item-price">
+                                    ₹75 <span class="old-price">₹85</span>
+                                    <span class="price-badge">Save ₹10</span>
+                                </div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">👨‍👩‍👧‍👦</div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">
+                                    <span class="veg-icon"></span>Family Pack
+                                </h3>
+                                <p class="menu-item-description">
+                                    4 Vada Pav + 2 Misal + 4 Drinks + Mixed Bhajiya
+                                </p>
+                                <div class="menu-item-price">
+                                    ₹299 <span class="old-price">₹350</span>
+                                    <span class="price-badge">Save ₹51</span>
+                                </div>
+                                <button class="btn btn-sm btn-primary mt-sm">Add to Enquiry</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section" id="cta" style="background: var(--light-gray);">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">Ready to Order?</h2>
+                    <p class="section-subtitle">
+                        Visit our nearest outlet or call us for takeaway and delivery
+                    </p>
+                    
+                    <div class="hero-cta">
+                        <a href="contact.html" class="btn btn-primary btn-lg">Find Locations</a>
+                        <a href="tel:+919876543210" class="btn btn-secondary btn-lg">Call Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                      <a href="/" class="logo" aria-label="YK Vadewale Home">
+                
+                <img src="assets/images/logo.svg" alt="">
+            </a>
+                    <p>Bringing authentic Mumbai street food to your neighborhood with love, tradition, and quality.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-link" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Business</h3>
+                    <ul>
+                        <li><a href="franchise.html">Franchise</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>📍 123 Food Street, Mumbai</li>
+                        <li>📞 +91-98765-43210</li>
+                        <li>✉️ info@ykvadewale.com</li>
+                        <li>🕒 Daily: 8 AM - 10 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+          <div class="footer-bottom">
+                <p>&copy; 2025 YK Vadewale. All rights reserved by <a href="https://webakoof.com/">WEBAKOOF </a>  |
+                   <a href="#privacy">Privacy Policy</a> | 
+                   <a href="#terms">Terms & Conditions</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

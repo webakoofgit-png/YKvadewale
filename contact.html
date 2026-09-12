@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact YK Vadewale - Find our locations, hours, phone numbers. Get in touch for orders, franchise inquiries, or general questions.">
+    <meta name="keywords" content="YK Vadewale contact, Mumbai street food locations, vada pav near me, contact details, phone number">
+    <title>Contact Us - YK Vadewale | Locations & Get in Touch</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .contact-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .contact-info-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            transition: var(--transition-medium);
+            border-top: 4px solid var(--primary-yellow);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .contact-title {
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-details {
+            color: var(--medium-gray);
+        }
+        
+        .contact-details a {
+            color: var(--dark-yellow);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-details a:hover {
+            color: var(--primary-yellow);
+        }
+        
+        .location-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-medium);
+            margin-bottom: 1.5rem;
+        }
+        
+        .location-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .location-header {
+            background: var(--primary-yellow);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .location-name {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.25rem;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+        
+        .location-type {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .location-content {
+            padding: 1.5rem;
+        }
+        
+        .location-address {
+            color: var(--medium-gray);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .location-details {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (min-width: 480px) {
+            .location-details {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .location-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .location-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 300px;
+            background: var(--light-gray);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .map-placeholder {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .contact-form-container {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .form-message {
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .form-message-success {
+            background: #E8F5E8;
+            color: #2E7D32;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .form-message-error {
+            background: #FFEBEE;
+            color: #C62828;
+            border-left: 4px solid #F44336;
+        }
+        
+        .quick-actions {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (min-width: 480px) {
+            .quick-actions {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .quick-actions {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .quick-action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: var(--primary-yellow);
+            color: var(--charcoal);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            transition: var(--transition-fast);
+        }
+        
+        .quick-action:hover {
+            background: var(--dark-yellow);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .hours-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: var(--light-gray);
+            border-radius: var(--radius-md);
+        }
+        
+        .hours-day {
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+        
+        .hours-time {
+            color: var(--medium-gray);
+        }
+        
+        .hours-item.today {
+            background: var(--primary-yellow);
+        }
+        
+        .hours-item.today .hours-day,
+        .hours-item.today .hours-time {
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header" role="banner">
+        <nav class="nav container" role="navigation">
+              <a href="/" class="logo" aria-label="YK Vadewale Home">
+                
+                <img src="assets/images/logo.svg" alt="">
+            </a>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="franchise.html" class="nav-link">Franchise</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+        <div class="nav-overlay" id="nav-overlay"></div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero" style="min-height: 50vh;">
+            <div class="container">
+                <div class="hero-content">
+                    <nav aria-label="Breadcrumb" class="mb-md">
+                        <ol style="display: flex; list-style: none; gap: 0.5rem; font-size: 0.9rem; color: var(--medium-gray);">
+                            <li><a href="index.html" style="color: var(--medium-gray);">Home</a></li>
+                            <li>/</li>
+                            <li style="color: var(--charcoal); font-weight: 600;">Contact</li>
+                        </ol>
+                    </nav>
+                    <h1 class="hero-title">Get in Touch</h1>
+                    <p class="hero-subtitle">
+                        Find our locations, contact details, and reach out to us for any queries
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="section" id="quick-actions">
+            <div class="container">
+                <div class="quick-actions">
+                    <a href="tel:+919876543210" class="quick-action">
+                        📞 Call Now
+                    </a>
+                    <a href="https://wa.me/919876543210" class="quick-action" target="_blank">
+                        💬 WhatsApp
+                    </a>
+                    <a href="mailto:info@ykvadewale.com" class="quick-action">
+                        ✉️ Email Us
+                    </a>
+                    <a href="#locations" class="quick-action">
+                        📍 Find Outlet
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="section" id="contact-info">
+            <div class="container">
+                <h2 class="section-title">Contact Information</h2>
+                
+                <div class="contact-info-grid">
+                    <div class="contact-card">
+                        <span class="contact-icon">📞</span>
+                        <h3 class="contact-title">Phone Numbers</h3>
+                        <div class="contact-details">
+                            <p><strong>Customer Care:</strong><br>
+                            <a href="tel:+919876543210">+91-98765-43210</a></p>
+                            <p><strong>Franchise Enquiry:</strong><br>
+                            <a href="tel:+919876543211">+91-98765-43211</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <span class="contact-icon">✉️</span>
+                        <h3 class="contact-title">Email Addresses</h3>
+                        <div class="contact-details">
+                            <p><strong>General Enquiry:</strong><br>
+                            <a href="mailto:info@ykvadewale.com">info@ykvadewale.com</a></p>
+                            <p><strong>Franchise:</strong><br>
+                            <a href="mailto:franchise@ykvadewale.com">franchise@ykvadewale.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <span class="contact-icon">📍</span>
+                        <h3 class="contact-title">Head Office</h3>
+                        <div class="contact-details">
+                            <p>123 Food Street,<br>
+                            Dadar West, Mumbai,<br>
+                            Maharashtra 400028<br>
+                            India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Hours -->
+        <section class="section" id="hours" style="background: var(--light-gray);">
+            <div class="container">
+                <h2 class="section-title">Business Hours</h2>
+                <p class="section-subtitle">We're open 7 days a week to serve you fresh food</p>
+                
+                <div class="hours-grid">
+                    <div class="hours-item">
+                        <span class="hours-day">Monday</span>
+                        <span class="hours-time">8:00 AM - 10:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="hours-day">Tuesday</span>
+                        <span class="hours-time">8:00 AM - 10:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="hours-day">Wednesday</span>
+                        <span class="hours-time">8:00 AM - 10:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="hours-day">Thursday</span>
+                        <span class="hours-time">8:00 AM - 10:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="hours-day">Friday</span>
+                        <span class="hours-time">8:00 AM - 11:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="hours-day">Saturday</span>
+                        <span class="hours-time">8:00 AM - 11:00 PM</span>
+                    </div>
+                    <div class="hours-item today">
+                        <span class="hours-day">Sunday</span>
+                        <span class="hours-time">8:00 AM - 10:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Locations -->
+        <section class="section" id="locations">
+            <div class="container">
+                <h2 class="section-title">Our Locations</h2>
+                <p class="section-subtitle">Visit any of our outlets for authentic Mumbai street food</p>
+                
+                <!-- Map -->
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🗺️</div>
+                        <h3>Interactive Map</h3>
+                        <p>Find YK Vadewale outlets near you</p>
+                        <button class="btn btn-primary mt-sm">View on Google Maps</button>
+                    </div>
+                </div>
+                
+                <div class="menu-grid">
+                    <!-- Flagship Store -->
+                    <div class="location-card">
+                        <div class="location-header">
+                            <div class="location-name">Dadar Flagship Store</div>
+                            <div class="location-type">Main Outlet • Since 2016</div>
+                        </div>
+                        <div class="location-content">
+                            <div class="location-address">
+                                123 Food Street, Near Dadar Railway Station,<br>
+                                Dadar West, Mumbai - 400028
+                            </div>
+                            <div class="location-details">
+                                <div class="location-detail">
+                                    <span>📞</span> +91-98765-43210
+                                </div>
+                                <div class="location-detail">
+                                    <span>🕒</span> 8 AM - 10 PM
+                                </div>
+                                <div class="location-detail">
+                                    <span>🚇</span> 2 min from Dadar Station
+                                </div>
+                                <div class="location-detail">
+                                    <span>🅿️</span> Parking Available
+                                </div>
+                            </div>
+                            <div class="location-actions">
+                                <a href="tel:+919876543210" class="btn btn-sm btn-primary">Call</a>
+                                <a href="#" class="btn btn-sm btn-outline">Directions</a>
+                                <a href="https://wa.me/919876543210" class="btn btn-sm btn-secondary">WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Andheri Branch -->
+                    <div class="location-card">
+                        <div class="location-header">
+                            <div class="location-name">Andheri West Branch</div>
+                            <div class="location-type">Express Counter</div>
+                        </div>
+                        <div class="location-content">
+                            <div class="location-address">
+                                Shop 45, Infinity Mall Food Court,<br>
+                                Andheri West, Mumbai - 400053
+                            </div>
+                            <div class="location-details">
+                                <div class="location-detail">
+                                    <span>📞</span> +91-98765-43212
+                                </div>
+                                <div class="location-detail">
+                                    <span>🕒</span> 11 AM - 10 PM
+                                </div>
+                                <div class="location-detail">
+                                    <span>🛍️</span> Inside Infinity Mall
+                                </div>
+                                <div class="location-detail">
+                                    <span>🚇</span> 5 min from Andheri Metro
+                                </div>
+                            </div>
+                            <div class="location-actions">
+                                <a href="tel:+919876543212" class="btn btn-sm btn-primary">Call</a>
+                                <a href="#" class="btn btn-sm btn-outline">Directions</a>
+                                <a href="https://wa.me/919876543212" class="btn btn-sm btn-secondary">WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pune Branch -->
+                    <div class="location-card">
+                        <div class="location-header">
+                            <div class="location-name">Pune FC Road</div>
+                            <div class="location-type">Standard Outlet</div>
+                        </div>
+                        <div class="location-content">
+                            <div class="location-address">
+                                789 FC Road, Near Sambhaji Garden,<br>
+                                Shivajinagar, Pune - 411005
+                            </div>
+                            <div class="location-details">
+                                <div class="location-detail">
+                                    <span>📞</span> +91-98765-43213
+                                </div>
+                                <div class="location-detail">
+                                    <span>🕒</span> 8 AM - 10 PM
+                                </div>
+                                <div class="location-detail">
+                                    <span>🎓</span> Near Colleges
+                                </div>
+                                <div class="location-detail">
+                                    <span>🏍️</span> Bike Parking
+                                </div>
+                            </div>
+                            <div class="location-actions">
+                                <a href="tel:+919876543213" class="btn btn-sm btn-primary">Call</a>
+                                <a href="#" class="btn btn-sm btn-outline">Directions</a>
+                                <a href="https://wa.me/919876543213" class="btn btn-sm btn-secondary">WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Nashik Branch -->
+                    <div class="location-card">
+                        <div class="location-header">
+                            <div class="location-name">Nashik Main Road</div>
+                            <div class="location-type">Franchise Outlet</div>
+                        </div>
+                        <div class="location-content">
+                            <div class="location-address">
+                                456 Main Road, Opposite City Center Mall,<br>
+                                Nashik Road, Nashik - 422101
+                            </div>
+                            <div class="location-details">
+                                <div class="location-detail">
+                                    <span>📞</span> +91-98765-43214
+                                </div>
+                                <div class="location-detail">
+                                    <span>🕒</span> 8 AM - 9 PM
+                                </div>
+                                <div class="location-detail">
+                                    <span>🛍️</span> Near Mall
+                                </div>
+                                <div class="location-detail">
+                                    <span>🚌</span> Bus Stop Nearby
+                                </div>
+                            </div>
+                            <div class="location-actions">
+                                <a href="tel:+919876543214" class="btn btn-sm btn-primary">Call</a>
+                                <a href="#" class="btn btn-sm btn-outline">Directions</a>
+                                <a href="https://wa.me/919876543214" class="btn btn-sm btn-secondary">WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="section" id="contact-form" style="background: var(--light-gray);">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="text-center mb-lg">
+                        <h2 class="section-title">Send us a Message</h2>
+                        <p class="section-subtitle">
+                            Have a question, suggestion, or feedback? We'd love to hear from you!
+                        </p>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <form class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Full Name *</label>
+                                    <input type="text" id="name" name="name" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" id="email" name="email" class="form-input" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject" class="form-label">Subject *</label>
+                                    <select id="subject" name="subject" class="form-select" required>
+                                        <option value="">Select Subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="feedback">Feedback</option>
+                                        <option value="complaint">Complaint</option>
+                                        <option value="franchise">Franchise Inquiry</option>
+                                        <option value="catering">Catering Services</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea id="message" name="message" class="form-textarea" rows="5" required placeholder="Please share your message, feedback, or inquiry details..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media -->
+        <section class="section" id="social">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">Follow Us</h2>
+                    <p class="section-subtitle">
+                        Stay connected with us on social media for updates, offers, and food stories
+                    </p>
+                    
+                    <div class="social-links" style="justify-content: center; margin-bottom: 2rem;">
+                        <a href="#" class="social-link" style="width: 60px; height: 60px; font-size: 1.5rem;" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-link" style="width: 60px; height: 60px; font-size: 1.5rem;" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" style="width: 60px; height: 60px; font-size: 1.5rem;" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-link" style="width: 60px; height: 60px; font-size: 1.5rem;" aria-label="YouTube">📺</a>
+                        <a href="#" class="social-link" style="width: 60px; height: 60px; font-size: 1.5rem;" aria-label="LinkedIn">💼</a>
+                    </div>
+                    
+                    <p style="color: var(--medium-gray);">
+                        📧 Subscribe to our newsletter: 
+                        <a href="mailto:newsletter@ykvadewale.com" style="color: var(--dark-yellow); font-weight: 600;">newsletter@ykvadewale.com</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                       <a href="/" class="logo" aria-label="YK Vadewale Home">
+                
+                <img src="assets/images/logo.svg" alt="">
+            </a>
+                    <p>Bringing authentic Mumbai street food to your neighborhood with love, tradition, and quality.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-link" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Business</h3>
+                    <ul>
+                        <li><a href="franchise.html">Franchise</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>📍 123 Food Street, Mumbai</li>
+                        <li>📞 +91-98765-43210</li>
+                        <li>✉️ info@ykvadewale.com</li>
+                        <li>🕒 Daily: 8 AM - 10 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+           <div class="footer-bottom">
+                <p>&copy; 2025 YK Vadewale. All rights reserved by <a href="https://webakoof.com/">WEBAKOOF </a>  |
+                   <a href="#privacy">Privacy Policy</a> | 
+                   <a href="#terms">Terms & Conditions</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Highlight current day
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().getDay();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const currentDay = days[today];
+            
+            const hoursItems = document.querySelectorAll('.hours-item');
+            hoursItems.forEach(item => {
+                const dayElement = item.querySelector('.hours-day');
+                if (dayElement && dayElement.textContent === currentDay) {
+                    item.classList.add('today');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
